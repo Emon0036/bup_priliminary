@@ -1,0 +1,8 @@
+{
+  "notice": "Synthetic demonstration calibration. Replace these values with verified BBS/HIES/LFS/CPI statistics for research-grade calibration.",
+  "seed": 42,
+  "population": 500,
+  "income_ranges_bdt": {"LOW":[12000,28000],"MEDIUM":[25000,55000],"HIGH":[50000,100000]},
+  "area_weights":{"URBAN":0.7,"RURAL":0.3},
+  "employment_rate":0.88
+}

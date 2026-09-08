@@ -1,0 +1,5 @@
+import os
+DATABASE_URL = os.getenv("DATABASE_URL", "")
+APP_VERSION = "1.0.0"
+MAX_MONTHS = 24
+MAX_CSP_BATCH = 30

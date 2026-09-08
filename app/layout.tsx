@@ -1,0 +1,4 @@
+import "./globals.css"; import Link from "next/link"; import {ChartNoAxesCombined} from "lucide-react";
+export const metadata={title:"EcoSim AI",description:"Intelligent Economic Society Simulator"};
+const links=[["Overview","/"],["Simulation","/simulation"],["Agents","/agents"],["Analytics","/analytics"],["Methodology","/methodology"]];
+export default function Layout({children}:{children:React.ReactNode}){return <><header className="bg-ink text-white"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4"><Link href="/" className="flex items-center gap-2 font-bold"><ChartNoAxesCombined className="text-teal"/>EcoSim AI</Link><nav className="hidden gap-1 text-sm md:flex">{links.map(([n,h])=><Link className="navlink" href={h} key={h}>{n}</Link>)}</nav><a className="text-sm text-teal-200" href="https://github.com/Emon0036/EcosimAi-" target="_blank">GitHub ↗</a></div></header><main className="mx-auto max-w-7xl px-5 py-8">{children}</main></>}

@@ -1,0 +1,9 @@
+fastapi>=0.115,<1
+pydantic>=2.8,<3
+sqlalchemy>=2.0,<3
+pymysql>=1.1,<2
+certifi>=2024.0
+numpy>=1.26,<3
+pandas>=2.2,<3
+scikit-learn>=1.5,<2
+pytest>=8,<9
