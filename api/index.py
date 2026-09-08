@@ -5,10 +5,19 @@ from backend.ai.astar import astar
 from backend.ai.risk_model import METRICS
 from backend.schemas import SimulationRequest, EventRequest, PathRequest
 from backend.store import STORE
+from sqlalchemy import text
 
 app=FastAPI(title="EcoSim AI API",version=APP_VERSION)
 @app.get("/api/health")
-def health(): return {"status":"ok","database":"connected" if engine else "not_configured","app_version":APP_VERSION}
+def health():
+    if not engine:
+        return {"status":"ok","database":"not_configured","app_version":APP_VERSION}
+    try:
+        with engine.connect() as connection:
+            connection.execute(text("SELECT 1"))
+        return {"status":"ok","database":"connected","app_version":APP_VERSION}
+    except Exception:
+        return {"status":"degraded","database":"unavailable","app_version":APP_VERSION}
 @app.get("/api/dashboard")
 def dashboard(): return STORE.summary()
 @app.get("/api/simulation/current")
