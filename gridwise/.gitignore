@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cov]
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Environment variables (never commit)
+.env
+.env.*
+
+# Docker
+.dockerinit
+
+# IDE
+.idea/
+.vscode/
+
+# Local artifacts
+.coverage
+htmlcov/
+.pid
+
+# Docker cache
+# These are created by `docker build`
+# and should not be committed
+_DOCKER_CACHE_/
+
+# Secrets
+*.key
+*.pem
